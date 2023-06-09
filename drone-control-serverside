@@ -6,10 +6,16 @@ import time
 
 
 serversocket = socket.socket(socket.AF_INET,socket.SOCK)
+#ソケットを作成しています
+
 serversocket.bind(("localhost",8080))
+#　バインドメソッドで、Localのポート8080にアクセスしたほしいから
+#　ここでは、Portのアドレスをバインド（関連付け）させている
+
 serversocket = listen(1)
 # listen()はストリーム・ソケットのみに対応しています
-# クライアントの接続待機
+# クライアントの接続待機状態にして、（）の中の数字でいくつの
+#　１つの接続を受けるかを選べる　⇒　２個できないの？？？？
 
 (clientsocket,address) = serversocket.accept()
 # クライアントの接続を許可する
